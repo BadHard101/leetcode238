@@ -13,15 +13,17 @@ public class Main {
             } else temp *= num;
         }
 
-        if (zerosNum == 0) {
-            for (int i = 0; i < nums.length; i++) {
-                answer[i] = temp / nums[i];
+        switch (zerosNum) {
+            case 0: {
+                for (int i = 0; i < nums.length; i++)
+                    answer[i] = temp / nums[i];
             }
-        } else {
-            for (int i = 0; i < nums.length; i++) {
-                if (nums[i] == 0) {
-                    answer[i] = temp;
-                    return answer;
+            case 1: {
+                for (int i = 0; i < nums.length; i++) {
+                    if (nums[i] == 0) {
+                        answer[i] = temp;
+                        return answer;
+                    }
                 }
             }
         }
